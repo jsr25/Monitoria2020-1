@@ -2,4 +2,4 @@
 
 
 
-* Editar el cliente para que haga el envio a tres servidorse diferentes al tiempo, con el uso de hilos.
+* Editar el cliente para que haga el envio a tres servidores diferentes al tiempo, con el uso de hilos.
