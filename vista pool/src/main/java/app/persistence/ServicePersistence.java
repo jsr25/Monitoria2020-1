@@ -12,6 +12,7 @@ public interface ServicePersistence {
     public void saveRequest(Request request);
     public void saveCategory(String name, String description);
     public void saveResponse(Response response);
+    public void updateEstado(String usuario, String equipo);
     public int getIdByRequest(Request request);
     public List<Request> getAllRequest();
     public List<String> getAllCategories();

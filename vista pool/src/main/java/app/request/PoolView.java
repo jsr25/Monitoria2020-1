@@ -11,14 +11,7 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.WindowConstants;
+import javax.swing.*;
 import javax.swing.plaf.MenuBarUI;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
@@ -55,6 +48,7 @@ public class PoolView extends JFrame {
             this.service = new ServicePersistenceInitial();
             List<Request> requestList = service.getAllRequest();
             Request request = null;
+            System.out.println(requestList.size());
             for (int i = 0; i < requestList.size(); i++) {
                 request = requestList.get(i);
                 addRequest(request);
@@ -87,18 +81,18 @@ public class PoolView extends JFrame {
             }
             
         });
-        newMonitor=new JMenuItem("Agregar Monitor");
-        newMonitor.addActionListener(new ActionListener() {
+         //newMonitor=new JMenuItem("Agregar Monitor");
+        /*newMonitor.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
                 NewMonitor newMonitor = new NewMonitor(service);
                 newMonitor.setVisible(true);
             }
-        });
+        });*/
 
 
-        menu.add(newMonitor);
+        //menu.add(newMonitor);
         menu.add(newCategory);
         this.setJMenuBar(menu);
     }
@@ -151,12 +145,14 @@ public class PoolView extends JFrame {
         Request req = new Request(usuario, descripcion, equipo, estado, new Date());
         req.setId(service.getIdByRequest(req));
         RequestDetail rd = new RequestDetail(ind, req,service);
-        rd.setVisible(true);
+       rd.setVisible(true);
+
     }
 
     public void addRequest(Request r) {
         dm.addRow(new Object[] { r.getId(), r.getEquipo(), r.getUsuario(), r.getEstado(), r.getInicio().toString(),
                 r.getDescripcion() });
+        //JOptionPane.showMessageDialog(null, "Solicitud Pendiente");
     }
 
     public void saveRequestInDB(Request r){

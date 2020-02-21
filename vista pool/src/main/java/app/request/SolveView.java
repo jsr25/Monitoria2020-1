@@ -90,6 +90,7 @@ public class SolveView extends JDialog {
                 if(observaciones!=null && selectionCategoria!=null && selectionMonitor!=null){
                     System.out.println(response.toString());
                     service.saveResponse(response);
+                    service.updateEstado(response.getConsulta().getUsuario(),response.getConsulta().getEquipo());
                 }
                 dispose();
             }

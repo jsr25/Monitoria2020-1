@@ -191,4 +191,18 @@ public class ServicePersistenceInitial implements ServicePersistence {
         }
         return id;
     }
+    public void updateEstado(String usuario, String equipo) {
+        Statement statement = null;
+        String sol="Solucionado";
+        try {
+            statement = connection.createStatement();
+            String statementSql = "UPDATE consulta SET estado='" + sol +"' WHERE usuario='"+ usuario +"'AND equipo='"+ equipo +"';";
+            statement.execute(statementSql);
+
+        } catch (Exception e) {
+            System.out.println("Error - update estado");
+            e.printStackTrace();
+        }
+        return;
+    }
 }

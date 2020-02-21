@@ -32,7 +32,7 @@ public class Client {
         String request = mapeoDeRequest();
         System.out.println(request);
         outC.println(request);
-        System.out.println(inC.readLine());
+        //System.out.println(inC.readLine());
         inC.close();
         outC.close();
         client.close();

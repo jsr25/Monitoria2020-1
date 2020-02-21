@@ -1,5 +1,7 @@
 package app.model;
 
+import javax.swing.*;
+
 /**
  * Response
  */

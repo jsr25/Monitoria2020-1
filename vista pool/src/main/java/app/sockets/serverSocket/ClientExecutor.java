@@ -10,6 +10,8 @@ import java.util.StringTokenizer;
 import app.model.Request;
 import app.request.PoolView;
 
+import javax.swing.*;
+
 /**
  * ClientExecutor
  */
@@ -27,6 +29,7 @@ public class ClientExecutor extends Thread {
     public void run() {
         try {
             procesar();
+            JOptionPane.showMessageDialog(null, "Solicitud recibida");
         } catch (Exception e) {
             System.out.println("Fallo en la ejecución por cliente.");
         }

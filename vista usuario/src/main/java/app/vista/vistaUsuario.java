@@ -74,7 +74,7 @@ public class vistaUsuario extends JFrame {
                     JOptionPane.showMessageDialog(null, "Su solicitud fue enviada");
                 } catch (Exception e1) {
                     // TODO Auto-generated catch block
-                    JOptionPane.showMessageDialog(null, "La conexion falló");
+                    JOptionPane.showMessageDialog(null, "La conexion falló //"+ e1.getMessage().toString());
                     // e1.printStackTrace();
                 }
             }
